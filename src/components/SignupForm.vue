@@ -4,11 +4,13 @@
     <input type="email" requierd>
   </form>
 </template>
+
 <script>
 export default {
   
 }
 </script>
+
 <style >
   form {
     max-width: 420px;

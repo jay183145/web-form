@@ -3,12 +3,10 @@
 </template>
 
 <script>
-import SignupForm from "./components/SignupForm.vue"
-import SignupForm from "./components/SignupForm.vue"
-
+import SignupForm from './components/SignupForm.vue'
 export default {
   name: 'App',
-  components: { SignupForm, SignupForm }
+  components: { SignupForm }
 }
 </script>
 

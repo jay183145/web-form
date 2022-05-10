@@ -14,7 +14,7 @@
     </select>
 
     <label>Skills:</label>
-    <input type="text" v-model="tempSkill" @keyup="addSkill">
+    <input type="text" v-model="tempSkill" @keyup="addSkill" required>
     <div v-for="skill in skills" :key="skill" class="pill">
       <span @click="deleteSkill(skill)"> {{ skill }} </span>
     </div>
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     addSkill(e) {
-      if (e.key === 'Enter' && this.tempSkill) {
+      if (e.key === 'enter' && this.tempSkill) {
         if (!this.skills.includes(this.tempSkill)) {
           this.skills.push(this.tempSkill)
         }   
@@ -66,6 +66,14 @@ export default {
     handleSubmit() {
       this.passwordError = this.password.length > 5 ? 
       '': 'Password must be at least 6 chars long'
+      if (!this.passwordError) {
+        // make request to database to save user
+        console.log('email: ', this.email)
+        console.log('password: ', this.password)
+        console.log('role: ', this.role)
+        console.log('skills: ', this.skills)
+        console.log('terms accepted: ', this.terms)
+      }
     }
   }
 }
